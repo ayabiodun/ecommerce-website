@@ -16,3 +16,20 @@ export async function getProducts(URL: string = endPoint): Promise<Products[]>{
         return [];
     }
 }
+
+
+export async function getOneProduct(id: string): Promise<Products | null>{
+
+    try {
+        const response = await fetch(`https://dummyjson.com/products/${id}`);
+        if(!response.ok) return null;
+
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+
+}
+

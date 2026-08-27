@@ -8,7 +8,7 @@ async function fetchedProducts() {
     const products = await getProducts();
 
     if (products.length === 0) {
-      productContainer.innerText = "Error";
+      productContainer.innerText = "No Products found";
       return;
     }
 
