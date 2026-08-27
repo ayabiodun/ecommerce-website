@@ -40,4 +40,31 @@ function registerF(e: Event): void{
     
 }
 
-registerBtn.addEventListener("click", (e: Event) => registerF(e))
+function loginF(e: Event){
+    e.preventDefault();
+    const formData = new FormData(form);
+    const username = formData.get('username') as string;
+    const password = formData.get('password') as string;
+
+    if(username === "" || password === "") return;
+
+    const userExist = arrUser.some(user => user.username === username);
+
+    if(userExist){
+        const loginUser = arrUser.filter(user => user.username === username);
+        const passwordExist = loginUser.some(user => user.password === password);
+        if(passwordExist){
+            const storedLogs = JSON.stringify({loggedIn: true})
+            localStorage.setItem("logged", storedLogs);
+        }else{
+            console.log("Invalid Password")
+        }
+    }else{
+        console.log("User does not exist")
+    }
+
+    form.reset();
+}
+
+registerBtn.addEventListener("click", (e: Event) => registerF(e));
+loginBtn.addEventListener('click', (e: Event) => loginF(e))
