@@ -56,11 +56,14 @@ function loginF(e: Event){
         if(passwordExist){
             const storedLogs = JSON.stringify({loggedIn: true})
             localStorage.setItem("logged", storedLogs);
+            window.location.href = "http://localhost:5173/"
         }else{
             console.log("Invalid Password")
         }
     }else{
-        console.log("User does not exist")
+        const userInput = document.querySelector('#username') as HTMLInputElement;
+
+        userInput.placeholder = "User does not exist"
     }
 
     form.reset();
