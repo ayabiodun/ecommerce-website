@@ -4,6 +4,11 @@ import { addToCart } from "../localstorage/cart";
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 const productDiv = document.querySelector("#product") as HTMLDivElement;
+const backBtn = document.querySelector('#back-btn') as HTMLButtonElement;
+
+backBtn.addEventListener('click', () => {
+  window.location.href = 'http://localhost:5173/';
+})
 
 async function renderOneProduct() {
   if (!id) {
@@ -29,7 +34,7 @@ async function renderOneProduct() {
 
       <div>
         <span>${product.rating}</span>
-        <span>${product.category}</span>
+        <span>${product.category.replace(/^./, c => c.toUpperCase())}</span>
       </div>
 
       <div>
