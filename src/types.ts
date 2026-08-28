@@ -4,7 +4,7 @@ export interface Products {
     title: string,
     thumbnail: string,
     category: string,
-    price: string,
+    price: number,
     rating: string,
     stock: string,
 }
@@ -14,4 +14,11 @@ export interface ProductsShape{
     total: string,
     skip: string,
     limit: string
+}
+
+export interface CartItem{
+    id: number,
+    title: string,
+    price: number,
+    quantity: number
 }
