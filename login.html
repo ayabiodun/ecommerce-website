@@ -1,23 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Shoply</title>
+  </head>
+
+  <body class="min-h-screen bg-slate-50 text-slate-900">
+
+    <header class="border-b border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8">
+        <a
+          href="index.html"
+          class="text-2xl font-bold tracking-tight"
+        >
+          Shoply
+        </a>
+
+        <nav class="flex items-center gap-6 text-sm font-medium text-slate-600">
+          <a href="index.html" class="hover:text-slate-900">
+            Home
+          </a>
+
+          <a href="cart.html" class="hover:text-slate-900">
+            Cart
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex min-h-[calc(100vh-81px)] items-center justify-center px-5 py-10">
+
+      <div class="w-full max-w-md">
+
+        <div class="mb-8 text-center">
+          <h1 class="text-3xl font-bold tracking-tight">
+            Welcome back
+          </h1>
+
+          <p class="mt-2 text-sm text-slate-500">
+            Login or create an account to continue shopping.
+          </p>
+        </div>
+
+        <form
+          class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
+        >
+
+          <div class="space-y-5">
+
+            <div>
+              <label
+                for="username"
+                class="mb-2 block text-sm font-medium text-slate-700"
+              >
+                Username
+              </label>
+
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Enter your username"
+                class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:ring-2 focus:ring-slate-100"
+              />
+            </div>
+
+            <div>
+              <label
+                for="password"
+                class="mb-2 block text-sm font-medium text-slate-700"
+              >
+                Password
+              </label>
+
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:ring-2 focus:ring-slate-100"
+              />
+            </div>
+            <p id="form-message" class="mt-4 text-center text-sm font-medium"></p>
+
+          </div>
+
+          <div class="mt-7 grid grid-cols-2 gap-3">
+
+            <button
+              type="button"
+              id="register-btn"
+              class="rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+            >
+              Register
+            </button>
+
+            <button
+              type="button"
+              id="login-btn"
+              class="rounded-xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
+            >
+              Login
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </main>
+
     <script type="module" src="/src/pages/login.ts"></script>
-</head>
-<body>
-    <form>
-        <div>
-            <input type="text" id="username" name="username" placeholder="Enter Username">
-            <label for="username">Username</label>
-        </div>
-        <div>
-            <input type="password" id="password" name="password">
-            <label for="password">Password</label>
-        </div>
-        <button id="register-btn">Register</button>
-        <button id="login-btn">Login</button>
-    </form>
-</body>
+  </body>
 </html>
