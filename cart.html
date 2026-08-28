@@ -3,23 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cart</title>
-  <script type="module" src="/src/pages/cart.ts"></script>
+  <title>Your Cart | Shoply</title>
 </head>
 
+<body class="bg-slate-50 text-slate-900">
 
-<body>
-  <button id="back-btn">Back</button>
-  <div id="cart">
-    <h1>Your Cart</h1>
+  <!-- Navbar -->
+  <header class="border-b border-slate-200 bg-white">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8">
+      <a href="index.html" class="text-2xl font-bold">Shoply</a>
 
-
-    <div id="cart-items"></div>
-
-
-    <div>
-      <h2>Total: $<span id="cart-total">0</span></h2>
+      <nav class="flex items-center gap-6 text-sm font-medium text-slate-600">
+        <a href="index.html" class="hover:text-slate-900">Home</a>
+        <a href="cart.html" class="text-slate-900">Cart</a>
+        <a href="login.html"
+          class="rounded-lg bg-slate-900 px-4 py-2 text-white hover:bg-slate-700">
+          Login
+        </a>
+      </nav>
     </div>
-  </div>
+  </header>
+
+  <main class="mx-auto max-w-7xl px-5 py-10 lg:px-8">
+
+    <button
+      id="back-btn"
+      class="mb-8 text-sm font-medium text-slate-600 hover:text-slate-900"
+    >
+      ← Continue Shopping
+    </button>
+
+    <h1 class="mb-8 text-3xl font-bold">Shopping Cart</h1>
+
+    <div class="grid gap-8 lg:grid-cols-[2fr_1fr]">
+
+      <!-- Cart Items -->
+      <section
+        id="cart-items"
+        class="space-y-5"
+      ></section>
+
+      <!-- Order Summary -->
+      <aside
+        class="h-fit rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+      >
+        <h2 class="mb-6 text-xl font-semibold">Order Summary</h2>
+
+        <div class="space-y-4 text-sm">
+
+          <div class="flex justify-between">
+            <span class="text-slate-500">Subtotal</span>
+            <span id="subtotal-price">$0</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-slate-500">HST (13%)</span>
+            <span id="tax-price">$0</span>
+          </div>
+
+          <hr class="border-slate-200">
+
+          <div class="flex justify-between text-lg font-bold">
+            <span>Total</span>
+            <span id="cart-total">$0</span>
+          </div>
+
+        </div>
+
+        <button
+          class="mt-8 w-full rounded-xl bg-slate-900 py-4 font-semibold text-white hover:bg-slate-700"
+        >
+          Proceed to Checkout
+        </button>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+  <script type="module" src="/src/pages/cart.ts"></script>
+
 </body>
 </html>
