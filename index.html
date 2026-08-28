@@ -7,7 +7,38 @@
     <title>ecommerce-website</title>
   </head>
   <body>
-    <div id="app"> 
+    <header class="navbar">
+      <a href="index.html" class="logo">Shoply</a>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="cart.html">Cart</a>
+        <a href="login.html" id="auth-link">Login</a>
+      </nav>
+    </header>
+    <div id="app">
+      <div id="search-section">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Search products..."
+        />
+        <button id="search-btn">Search</button>
+      </div>
+
+      <select id="category-select">
+        <option value="">All Categories</option>
+      </select>
+      <select id="sort-select">
+        <option value="">Sort Products</option>
+        <option value="title-asc">Name: A-Z</option>
+        <option value="title-desc">Name: Z-A</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="rating-desc">Rating: Highest First</option>
+        <option value="rating-asc">Rating: Lowest First</option>
+      </select>
+
       <div id="product-container"></div>
     </div>
     <script type="module" src="/src/main.ts"></script>
